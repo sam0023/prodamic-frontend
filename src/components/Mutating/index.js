@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import closingGap from "../../images/closingGap.jpg";
 import pandamic from "../../images/pandamic.jpg";
 import group from "../../images/group.jpg";
-import Popup from "../Popup";
+// import Popup from "../Popup";
 import "./index.css";
 
 const viewOptions = {
@@ -29,11 +29,11 @@ const Mutating = (props) => {
   const headingTextareaRef = useRef(null);
   const endTextareaRef = useRef(null);
   const navigate = useNavigate();
-  const [showModal, setShowModal] = useState(true);
+  // const [showModal, setShowModal] = useState(true);
 
-  const toggleModal = () => {
-    setShowModal(false);
-  };
+  // const toggleModal = () => {
+  //   setShowModal(false);
+  // };
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
