@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.bg{
+    background: linear-gradient(to bottom, #faaab7, #9370DB);
+}
+.origin-bg{
+    /* background: linear-gradient(to bottom, #FFC0CB, #9370DB); */
+    background-color: #faaab7 ;
+    padding: 30px;
+    margin: 0px;
+    /* border:solid 1px red; */
+    box-sizing: border-box;
+    color: #fdf9f9;
+    /* color: rgb(241, 239, 236); */
+    font-size: 18px;
+    font-family: "Bree Serif";
+}
+h1, h2, h3 {
+    color: #ff6600;
+    font-family: 'Roboto';
+  }
+
+.banner-img{
+     height: 50vh;
+     width:100%;
+     margin: 0px;
+     padding: 0px;
+     flex-grow: 1;
+     /* border: solid 1px red; */
+     box-sizing: border-box;
+    
+}
+.blog-img{
+    height: 320px;
+    width:250px;
+    border-radius: 5px;
+    margin-right: 30px;
+}
+.blog{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.blog-img-2{
+    height: 320px;
+    width:250px;
+    border-radius: 5px;
+    margin-left: 30px;
+    order:2
+}
+.blog-text-2{
+    order:1
+}
+.evolve-bg{
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;
+}
+.evolve-btn{
+    padding: 10px 15px 10px 15px;
+    border-radius: 5px;
+    font-size: 22px;
+    font-weight: 500;
+    background-color: #4da2d3;
+    outline: none;
+    color: #ffffff;
+    border:none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    transform: translateZ(0);
+}
+.evolve-btn:hover{
+    transform: scale(1.05) translateZ(0);
+}
+@media (max-width:769px) {
+    .blog-text-2{
+        order:2
+    }
+    .blog-img-2{
+        order:1
+    }
+    .blog{
+        flex-direction: column;
+    }
+    .blog-img{
+        width: 80%;
+        height: 300px;
+    }
+    .blog-img-2{
+        width: 80%;
+        height: 300px;
+    }
+}

@@ -1,0 +1,18 @@
+.loader-bg{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #faaab7, #9370DB);
+}
+.not-found-bg{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #faaab7, #9370DB);
+    color: blanchedalmond;
+    font-size: 18px;
+    font-family: "Bree Serif";
+}
