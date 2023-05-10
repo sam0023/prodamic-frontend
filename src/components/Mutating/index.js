@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import closingGap from "../../images/closingGap.jpg";
 import pandamic from "../../images/pandamic.jpg";
 import group from "../../images/group.jpg";
+import Popup from "../Popup";
 import "./index.css";
 
 const viewOptions = {
@@ -28,6 +29,11 @@ const Mutating = (props) => {
   const headingTextareaRef = useRef(null);
   const endTextareaRef = useRef(null);
   const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(true);
+
+  const toggleModal = () => {
+    setShowModal(false);
+  };
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -76,9 +82,11 @@ const Mutating = (props) => {
     adjustEndTextareaHeight();
   }, []);
 
-  const renderFailureView = () => {
-    <p>sorry! something went wrong!!</p>;
-  };
+  const renderFailureView = () => (
+    <div>
+      <p>sorry! something went wrong!!</p>
+    </div>
+  );
 
   const handlePostApi = async () => {
     const details = {
@@ -97,13 +105,17 @@ const Mutating = (props) => {
     };
 
     console.log(details);
-
-    const response = await fetch("http://localhost:5000/edit", options);
+    const response = await fetch(
+      "https://prodemic-backend.vercel.app/edit",
+      options
+    );
+    // const response = await fetch("http://localhost:5000/edit", options);
 
     if (response.status === 200) {
       navigate(`/variant/${username}`);
     } else if (response.status === 400) {
       setErrorMsg(errMsgOptions.unavailable);
+      // <Popup showModal={showModal} toggleModal={toggleModal} />;
     } else {
       setActiveView(viewOptions.failure);
     }
@@ -111,15 +123,17 @@ const Mutating = (props) => {
 
   const checkUsernameAvailabilty = async () => {
     console.log("username=", username);
-    const response = await fetch(`http://localhost:5000/${username}`);
-    // const response = await fetch(`https://apis.ccbp.in/ipl`);
+    const response = await fetch(
+      `https://prodemic-backend.vercel.app/${username}`
+    );
+    // const response = await fetch(`http://localhost:5000/${username}`);
+
     console.log(response);
     if (response.status === 400) {
       setErrorMsg(errMsgOptions.available);
       // console.log(response);
     } else {
       setErrorMsg(errMsgOptions.unavailable);
-      // console.log(response);
     }
   };
 
@@ -130,7 +144,7 @@ const Mutating = (props) => {
       case errMsgOptions.available:
         return <p className="available">*Available</p>;
       case errMsgOptions.unavailable:
-        console.log("unaavail");
+        // console.log("unaavail");
         return (
           <p className="unavailable">*Sorry! this username is unavailable</p>
         );

@@ -21,7 +21,9 @@ const Variant = () => {
   const [activeView, setActiveView] = useState(viewOptions.loading);
 
   const requestUserDetailsApi = async () => {
-    const response = await fetch(`http://localhost:5000/${username}`);
+    const response = await fetch(
+      `https://prodemic-backend.vercel.app/${username}`
+    );
     const data = await response.json();
 
     if (response.status === 200) {
@@ -31,7 +33,7 @@ const Variant = () => {
       setWhyNow(msg);
       setActiveView(viewOptions.success);
     } else {
-      console.log("changing to failure view");
+      // console.log("changing to failure view");
       setActiveView(viewOptions.failure);
     }
   };
