@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import closingGap from "../../images/closingGap.jpg";
 import pandamic from "../../images/pandamic.jpg";
 import group from "../../images/group.jpg";
-// import Popup from "../Popup";
+import Popup from "../Popup";
 import "./index.css";
 
 const viewOptions = {
@@ -29,11 +29,11 @@ const Mutating = (props) => {
   const headingTextareaRef = useRef(null);
   const endTextareaRef = useRef(null);
   const navigate = useNavigate();
-  // const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
-  // const toggleModal = () => {
-  //   setShowModal(false);
-  // };
+  const toggleModal = () => {
+    setShowModal(false);
+  };
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -83,8 +83,8 @@ const Mutating = (props) => {
   }, []);
 
   const renderFailureView = () => (
-    <div>
-      <p>sorry! something went wrong!!</p>
+    <div className="fail-text">
+      <h1>sorry! something went wrong!!</h1>
     </div>
   );
 
@@ -111,8 +111,9 @@ const Mutating = (props) => {
     if (response.status === 200) {
       navigate(`/variant/${username}`);
     } else if (response.status === 400) {
-      setErrorMsg(errMsgOptions.unavailable);
-      // <Popup showModal={showModal} toggleModal={toggleModal} />;
+      console.log("modal showing");
+      // setErrorMsg(errMsgOptions.unavailable);
+      setShowModal(true);
     } else {
       setActiveView(viewOptions.failure);
     }
@@ -128,7 +129,6 @@ const Mutating = (props) => {
     console.log(response);
     if (response.status === 400) {
       setErrorMsg(errMsgOptions.available);
-      // console.log(response);
     } else {
       setErrorMsg(errMsgOptions.unavailable);
     }
@@ -142,9 +142,8 @@ const Mutating = (props) => {
         return <p className="available">*Available</p>;
       case errMsgOptions.unavailable:
         // console.log("unaavail");
-        return (
-          <p className="unavailable">*Sorry! this username is unavailable</p>
-        );
+        return <p className="unavailable">*Sorry! this username is taken!</p>;
+
       default:
         return null;
     }
@@ -152,6 +151,7 @@ const Mutating = (props) => {
 
   const renderEditView = () => (
     <div className="bg">
+      {showModal && <Popup showModal={showModal} toggleModal={toggleModal} />}
       <div>
         <img className="banner-img" src={closingGap} alt="banner" />
       </div>

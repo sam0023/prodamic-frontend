@@ -1,0 +1,37 @@
+.modal-bg{
+    display:flex;
+    justify-content: center;
+}
+.popup{
+     display: flex;
+     justify-content: flex-end;
+     /* align-items: center; */
+     /* background-color: red; */
+     cursor: pointer;
+}
+.popup-text-bg{
+    display: flex;
+    align-items: center;
+    padding:10px
+}
+.popup-text{
+    margin-right: 10px;
+    color: rgb(66, 61, 61);
+}
+
+.popup-btn{
+    padding: 8px 10px 8px 10px;
+    
+    border-radius: 5px;
+    background-color: #5fa8d3;
+    outline: none;
+    color: #ffffff;
+    border:none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    transform: translateZ(0);
+    
+}
+.popup-btn:hover{
+    transform: scale(1.05) translateZ(0);
+}
