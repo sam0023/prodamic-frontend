@@ -105,10 +105,7 @@ const Mutating = (props) => {
     };
 
     console.log(details);
-    const response = await fetch(
-      "https://prodemic-backend.vercel.app/edit",
-      options
-    );
+    const response = await fetch("http://65.0.97.229:5000/edit", options);
     // const response = await fetch("http://localhost:5000/edit", options);
 
     if (response.status === 200) {
@@ -123,10 +120,10 @@ const Mutating = (props) => {
 
   const checkUsernameAvailabilty = async () => {
     console.log("username=", username);
-    const response = await fetch(
-      `https://prodemic-backend.vercel.app/${username}`
-    );
-    // const response = await fetch(`http://localhost:5000/${username}`);
+    // const response = await fetch(
+    //   `https://prodemic-backend.vercel.app/${username}`
+    // );
+    const response = await fetch(`http://65.0.97.229:5000/${username}`);
 
     console.log(response);
     if (response.status === 400) {
