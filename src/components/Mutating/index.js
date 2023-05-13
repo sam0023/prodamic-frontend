@@ -92,7 +92,7 @@ const Mutating = (props) => {
     const details = {
       name: username,
       about: heading,
-      introduction: intro,
+      introduction: introduction,
       msg: end,
     };
 
