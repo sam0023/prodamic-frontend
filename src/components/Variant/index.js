@@ -25,7 +25,7 @@ const Variant = () => {
     //   `https://prodemic-backend.vercel.app/${username}`
     // );
 
-    const response = await fetch(`http://65.0.97.229:5000/${username}`);
+    const response = await fetch(`https://samserver.online/${username}`);
     const data = await response.json();
 
     if (response.status === 200) {
