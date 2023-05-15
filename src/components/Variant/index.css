@@ -3,7 +3,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to bottom, #faaab7, #9370DB);
+    /* background: linear-gradient(to bottom, #faaab7, #9370DB); */
+    background-color: #fbfdff;
 }
 .not-found-bg{
     min-height: 100vh;
@@ -11,8 +12,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to bottom, #faaab7, #9370DB);
-    color: blanchedalmond;
+    /* background: linear-gradient(to bottom, #faaab7, #9370DB); */
+    background-color: #fbfdff;
+    color: black;
     font-size: 18px;
     font-family: "Bree Serif";
 }

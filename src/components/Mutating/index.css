@@ -1,6 +1,7 @@
 .text-area{
     padding:10px;
-    color: #ffffff;
+    /* color: #ffffff; */
+    color:rgb(0 0 0 / 50%);
     font-size: 18px;
     font-family: "Bree Serif";
     background-color: transparent;
@@ -12,6 +13,8 @@
 }
 .text-area:focus {
      border:solid 3px #c07380  ;
+     /* border:solid 3px #5fa8d3; */
+     
      outline: none;
      
      

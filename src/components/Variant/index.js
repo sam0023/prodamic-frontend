@@ -82,7 +82,7 @@ const Variant = () => {
           </div>
         </div>
         <div className="msg-bg">
-          <h2>why Now</h2>
+          <h2>why Now ?</h2>
           <div className="blog">
             <img className="blog-img-2" src={group} alt="group" />
             <p className="blog-text-2">{whyNow}</p>
